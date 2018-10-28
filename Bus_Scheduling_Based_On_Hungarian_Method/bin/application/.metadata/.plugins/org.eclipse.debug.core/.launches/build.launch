@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.php.phpunit.PHPUnitLaunchConfigurationType">
+<stringAttribute key="ZEND_PHPUNIT_TESTS_CONTAINER_TYPE" value="SCRIPT_FOLDER"/>
+<booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="true"/>
+<booleanAttribute key="org.eclipse.php.debug.core.RunWithDebugInfo" value="false"/>
+<booleanAttribute key="org.eclipse.php.phpunit.code_coverage" value="false"/>
+<stringAttribute key="org.eclipse.php.phpunit.container" value="build"/>
+<stringAttribute key="org.eclipse.php.phpunit.elementPath" value="/Bus_Scheduling_Based_On_HungarianMethod/build"/>
+<stringAttribute key="org.eclipse.php.phpunit.file" value="/Bus_Scheduling_Based_On_HungarianMethod/build"/>
+<booleanAttribute key="org.eclipse.php.phpunit.is_suite" value="true"/>
+<booleanAttribute key="org.eclipse.php.phpunit.logXml" value="false"/>
+<stringAttribute key="org.eclipse.php.phpunit.project" value="Bus_Scheduling_Based_On_HungarianMethod"/>
+<stringAttribute key="org.eclipse.php.phpunit.runType" value="PHAR_EXECUTION_TYPE"/>
+</launchConfiguration>

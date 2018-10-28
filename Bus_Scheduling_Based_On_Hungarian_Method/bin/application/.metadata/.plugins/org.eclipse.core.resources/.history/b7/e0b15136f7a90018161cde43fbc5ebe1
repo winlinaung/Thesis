@@ -1,0 +1,114 @@
+package controllers;
+
+import java.time.LocalDate;
+import java.util.Collection;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+public class MetaDadosInfo2 {
+	String BusNumber;
+	int TripNo1;
+	double DeperatureTime1;
+	int TripNo2;
+	double DeperatureTime2;
+	String ResidenceCity;
+	double WaitingTime;
+	LocalDate DeperatureDate1;
+	LocalDate DeperatureDate2;
+	
+	public MetaDadosInfo2(String ResultTableBusNumber,int ResultTableTripNo1,double ResultTableDeperatureTime1,int ResultTableTripNo2,double ResultTableDeperatureTime2,String ResultTableResidenceCity,double ResultTableWaitingTime,LocalDate DeperatureDate1,LocalDate DeperatureDate2) {
+	this.BusNumber = ResultTableBusNumber;
+	this.TripNo1 = ResultTableTripNo1;
+	this.DeperatureTime1 = ResultTableDeperatureTime1;
+	this.TripNo2 = ResultTableTripNo2;
+	this.DeperatureTime2 = ResultTableDeperatureTime2;
+	this.ResidenceCity = ResultTableResidenceCity;
+	this.WaitingTime =  ResultTableWaitingTime;
+	this.DeperatureDate1 = DeperatureDate1;
+	this.DeperatureDate2 = DeperatureDate2;
+	}
+
+	public String getBusNumber() {
+		return BusNumber;
+	}
+
+	public void setBusNumber(String busNumber) {
+		BusNumber = busNumber;
+	}
+	public int getTripNo1() {
+		return TripNo1;
+	}
+
+	public void setTripNo1(int tripNo1) {
+		TripNo1 = tripNo1;
+	}
+
+	public double getDeperatureTime1() {
+		return DeperatureTime1;
+	}
+
+	public void setDeperatureTime1(double deperatureTime1) {
+		DeperatureTime1 = deperatureTime1;
+	}
+
+	public int getTripNo2() {
+		return TripNo2;
+	}
+
+	public void setTripNo2(int tripNo2) {
+		TripNo2 = tripNo2;
+	}
+
+	public double getDeperatureTime2() {
+		return DeperatureTime2;
+	}
+
+	public void setDeperatureTime2(double deperatureTime2) {
+		DeperatureTime2 = deperatureTime2;
+	}
+
+	public String getResidenceCity() {
+		return ResidenceCity;
+	}
+
+	public void setResidenceCity(String residenceCity) {
+		ResidenceCity = residenceCity;
+	}
+
+	public double getWaitingTime() {
+		return WaitingTime;
+	}
+
+	public void setWaitingTime(double waitingTime) {
+		WaitingTime = waitingTime;
+	}
+
+	public LocalDate getDeperatureDate1() {
+		return DeperatureDate1;
+	}
+
+	public void setDeperatureDate1(LocalDate deperatureDate1) {
+		DeperatureDate1 = deperatureDate1;
+	}
+
+	public LocalDate getDeperatureDate2() {
+		return DeperatureDate2;
+	}
+
+	public void setDeperatureDate2(LocalDate deperatureDate2) {
+		DeperatureDate2 = deperatureDate2;
+	}
+
+	public static void linearTablaConductores(ObservableList<MetaDadosInfo2> data) {
+		String BusNumber = null; 
+		int TripNo1 = 0;
+		double BusDeperatureTime1 = 0.0;
+		int TripNo2 = 0; 
+		double BusDeperatureTime2 = 0.0; 
+		String ResidenceCity = null;
+		double LeastLayoverTime = 0.0;
+		LocalDate DeperatureDate1 = null,DeperatureDate2 = null;
+		data = FXCollections.observableArrayList();
+		data.addAll( new MetaDadosInfo2(BusNumber,TripNo1,BusDeperatureTime1,TripNo2,BusDeperatureTime2,ResidenceCity,LeastLayoverTime,DeperatureDate1,DeperatureDate2));
+	}
+}

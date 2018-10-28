@@ -1,0 +1,79 @@
+package application;
+
+import controllers.LoginAndRegistrationController;
+import controllers.ModelController;
+import controllers.ResultController;
+import controllers.ShowDataController;
+import controllers.welcomeController;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+
+public class SceneManager {
+	private Scene scene;
+	public ShowDataController sdController;
+	public ResultController rController;
+	public ModelController mController;
+	public LoginAndRegistrationController LoginAndRegController;
+	public welcomeController wController;
+	
+	public SceneManager(Scene scene) {
+		this.scene = scene;
+	}
+	
+	public void showInputView() {
+		try {
+			FXMLLoader loader  = new FXMLLoader(getClass().getResource("UserInputDeperatureAndArrivalTime.fxml"));
+			scene.setRoot( (Parent) loader.load() );
+			sdController = loader.<ShowDataController>getController();
+			sdController.initData(this);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void showResultView() {
+		try {
+			FXMLLoader loader  = new FXMLLoader(getClass().getResource("/application/Result.fxml"));
+			scene.setRoot( (Parent) loader.load() );
+			rController = loader.<ResultController>getController();
+			rController.initData(this);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void showModelView() {
+		try {
+			FXMLLoader loader  = new FXMLLoader(getClass().getResource("/application/ModelForBusScheduling.fxml"));
+			scene.setRoot( (Parent) loader.load() );
+			mController = loader.<ModelController>getController();
+			mController.initData(this);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void showLoginAndRegistrationView() {
+		try {
+			FXMLLoader loader  = new FXMLLoader(getClass().getResource("LoginAndRegistration.fxml"));
+			scene.setRoot( (Parent) loader.load() );
+			LoginAndRegController = loader.<LoginAndRegistrationController>getController();
+			LoginAndRegController.initData(this);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void showWelcomeView() {
+		try {
+			FXMLLoader loader  = new FXMLLoader(getClass().getResource("/application/welcome.fxml"));
+			scene.setRoot( (Parent) loader.load() );
+			LoginAndRegController = loader.<LoginAndRegistrationController>getController();
+			LoginAndRegController.initData(this);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

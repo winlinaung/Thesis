@@ -1,0 +1,150 @@
+package controllers;
+
+import static java.lang.Math.floor;
+import static java.lang.Math.round;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Collection;
+import java.util.EventObject;
+import java.util.ResourceBundle;
+import java.util.Scanner;
+
+import application.SceneManager;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
+public class ShowDataController implements Initializable{
+	SceneManager manager;
+	double[][] TableOne;
+	double[][] TableTwo;
+	double[][] array1;
+	double[][] array2;
+	double[][] SuitableTable;
+	String[][] SuitableBasedCity;
+	String BasedCityOne;
+	String BasedCityTwo;
+	@FXML
+	TextField TextFieldBusGateName;
+	@FXML
+	TextField TextFieldBusNumber;
+	@FXML
+	TextField TextFieldResidenceCity1;
+	@FXML
+	TextField TextFieldBusDeperatureTime1;
+	@FXML
+	TextField TextFieldBusArrivalTime1;
+	@FXML
+	TextField TextFieldResidenceCity2;
+	@FXML
+	TextField TextFieldBusDeperatureTime2;
+	@FXML
+	TextField TextFieldBusArrivalTime2;
+	@FXML
+	TextField TextFieldLeastLayoverTime;
+	@FXML 
+	TextField TextFieldNoOfTrip;
+	@FXML 
+	Button BtnCalculate;
+	@FXML 
+	Button BtnAddData;
+	@FXML 
+	javafx.scene.control.TableView<MetaDadosInfo> TableView;
+	@FXML 
+	javafx.scene.control.TableView<MetaDadosInfo> ResultTableView;
+	@FXML 
+	TableColumn<MetaDadosInfo2,String> ResultTableColBusNumber;
+	@FXML 
+	TableColumn<MetaDadosInfo2,String> ResultTableColBusGateName;
+	@FXML 
+	TableColumn<MetaDadosInfo2,Integer> ResultTableColTripNo1;
+	@FXML 
+	TableColumn<MetaDadosInfo2,Double> ResultTableColBusDeperatureTime1;
+	@FXML 
+	TableColumn<MetaDadosInfo2, Integer> ResultTableColTripNo2;
+	@FXML 
+	TableColumn<MetaDadosInfo2,Double> ResultTableColBusDeperatureTime2;
+	@FXML 
+	TableColumn<MetaDadosInfo2,String> ResultTableColResidenceCity;
+	@FXML 
+	TableColumn<MetaDadosInfo2,Double> ResultTableColWaitingTime;
+	@FXML
+	TableColumn<MetaDadosInfo,String> TableColBusNumber;
+	@FXML
+	TableColumn<MetaDadosInfo,String> TableColResidenceCity1;
+	@FXML
+	TableColumn<MetaDadosInfo,Double> TableColBusDeperatureTime1;
+	@FXML
+	TableColumn<MetaDadosInfo,Double> TableColBusArrivalTime1;
+	@FXML
+	TableColumn<MetaDadosInfo,String> TableColResidenceCity2;
+	@FXML
+	TableColumn<MetaDadosInfo,Double> TableColBusDeperatureTime2;
+	@FXML
+	TableColumn<MetaDadosInfo,Double> TableColBusArrivalTime2;
+	@FXML
+	TableColumn<MetaDadosInfo,Double> TableColLeastLayoverTime;
+//	ObservableList<MetaDadosInfo> data;
+	public void handleAddData() {
+
+		String BusNumber = TextFieldBusNumber.getText();
+		String ResidenceCity1 = TextFieldResidenceCity1.getText();
+		double BusDeperatureTime1 = Double.valueOf(TextFieldBusDeperatureTime1.getText());
+		double BusArrivalTime1 = Double.valueOf(TextFieldBusArrivalTime1.getText()); 
+		String ResidenceCity2 = TextFieldResidenceCity2.getText(); 
+		double BusDeperatureTime2 = Double.valueOf(TextFieldBusDeperatureTime2.getText()); 
+		double BusArrivalTime2 = Double.valueOf(TextFieldBusArrivalTime2.getText());
+		double LeastLayoverTime = Double.valueOf(TextFieldLeastLayoverTime.getText());
+//		data = FXCollections.observableArrayList();
+
+//		 data.add(new MetaDadosInfo(CarGateName,CarNumber,ResidenceCity1,CarDeperatureTime1,CarArrivalTime1,ResidenceCity2,CarDeperatureTime2,CarArrivalTime2,LeastLayoverTime));
+//		 MetaDadosInfo.linearTablaConductores(data);
+//		 TableView.setItems(data);
+		TableView.getItems().add(new MetaDadosInfo(BusNumber,ResidenceCity1,BusDeperatureTime1,BusArrivalTime1,ResidenceCity2,BusDeperatureTime2,BusArrivalTime2,LeastLayoverTime));
+		TextFieldBusNumber.clear();
+		TextFieldBusDeperatureTime1.clear();
+		TextFieldBusArrivalTime1.clear();
+		TextFieldBusDeperatureTime2.clear();
+		TextFieldBusArrivalTime2.clear();
+		TableView.setEditable(false);
+	}
+	
+	public void NextCalculationPage(ActionEvent event) throws IOException {
+		manager.showResultView();
+	}
+	
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+		TableColBusNumber.setCellValueFactory(new PropertyValueFactory<MetaDadosInfo,String>("TextFieldBusNumber"));
+		TableColResidenceCity1.setCellValueFactory(new PropertyValueFactory<MetaDadosInfo,String>("TextFieldResidenceCity1"));
+		TableColBusDeperatureTime1.setCellValueFactory(new PropertyValueFactory<MetaDadosInfo,Double>("TextFieldBusDeperatureTime1"));
+		TableColBusArrivalTime1.setCellValueFactory(new PropertyValueFactory<MetaDadosInfo,Double>("TextFieldBusArrivalTime1"));
+		TableColResidenceCity2.setCellValueFactory(new PropertyValueFactory<MetaDadosInfo,String>("TextFieldResidenceCity2"));
+		TableColBusDeperatureTime2.setCellValueFactory(new PropertyValueFactory<MetaDadosInfo,Double>("TextFieldBusDeperatureTime2"));
+		TableColBusArrivalTime2.setCellValueFactory(new PropertyValueFactory<MetaDadosInfo,Double>("TextFieldBusArrivalTime2"));
+		TableColLeastLayoverTime.setCellValueFactory(new PropertyValueFactory<MetaDadosInfo,Double>("TextFieldLeastLayoverTime"));
+		
+	}
+
+	public void initData(controllers.SceneManager sceneManager) {
+		this.manager = sceneManager;
+	}
+}

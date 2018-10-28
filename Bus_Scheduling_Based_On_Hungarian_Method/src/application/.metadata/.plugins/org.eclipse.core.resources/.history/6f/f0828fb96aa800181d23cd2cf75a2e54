@@ -1,0 +1,156 @@
+package controllers;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Collection;
+import java.util.EventObject;
+import java.util.ResourceBundle;
+
+import application.SceneManager;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+
+public class ResultController implements Initializable{
+	SceneManager manager;
+	javafx.scene.control.TableView<MetaDadosInfo> TableView;
+	@FXML 
+	javafx.scene.control.TableView<MetaDadosInfo2> ResultTableView;
+	@FXML 
+	TableColumn<MetaDadosInfo2,String> ResultTableColBusNumber;
+	@FXML 
+	TableColumn<MetaDadosInfo2,Integer> ResultTableColTripNo1;
+	@FXML 
+	TableColumn<MetaDadosInfo2,Double> ResultTableColBusDeperatureTime1;
+	@FXML 
+	TableColumn<MetaDadosInfo2, Integer> ResultTableColTripNo2;
+	@FXML 
+	TableColumn<MetaDadosInfo2,Double> ResultTableColBusDeperatureTime2;
+	@FXML 
+	TableColumn<MetaDadosInfo2,String> ResultTableColResidenceCity;
+	@FXML 
+	TableColumn<MetaDadosInfo2,Double> ResultTableColWaitingTime;
+
+	@FXML
+	TextField TextFieldCarGateName;
+	@FXML
+	TextField TextFieldCarNumber;
+	@FXML
+	TextField TextFieldResidenceCity1;
+	@FXML
+	TextField TextFieldCarDeperatureTime1;
+	@FXML
+	TextField TextFieldCarArrivalTime1;
+	@FXML
+	TextField TextFieldResidenceCity2;
+	@FXML
+	TextField TextFieldCarDeperatureTime2;
+	@FXML
+	TextField TextFieldCarArrivalTime2;
+	@FXML
+	TextField TextFieldLeastLayoverTime;
+	@FXML 
+	TextField TextFieldNoOfTrip;
+	@FXML 
+	public void CalculateByHungarianMethod() throws IOException{
+		double leastLayoverTime = 5.5;
+		ShowDataController h1 = manager.sdController;
+		
+		Hungarian_Algorithm h2 = new Hungarian_Algorithm(manager.sdController.TableView.getItems());
+		 String BusNumber;
+		 String BusGateName;
+		 int TripNo1;
+		 double DeperatureTime1;
+		 int TripNo2;
+		 double DeperatureTime2;
+		 String ResidenceCity;
+		 double WaitingTime;
+		int numOfRows = h1.TableView.getItems().size();//Integer.parseInt(h1.TextFieldNoOfTrip.getText());
+		int numOfCols = 2;
+		double[][] array = new double[numOfRows][numOfCols]; 
+		int[][] assignment = new int[array.length][2];
+		h2.generateSuitableLayoverTime(array);
+		leastLayoverTime = h1.TableColLeastLayoverTime.getCellData(0);
+		System.out.println("LeastLayoverTime"+leastLayoverTime);
+		System.out.println(leastLayoverTime);
+		assignment = h2.hgAlgorithmAssignments(h2.SelectSuitableIdleTime(h2.calculateTableOne(leastLayoverTime), h2.calculateTableTwo(leastLayoverTime)), "min");
+		double sum = 0.0;
+		for (int i=0; i<assignment.length; i++) 
+		{ 
+			 int Route_Number1 = assignment[i][0]+1 ;
+			 int Route_Number2 = h2.SuitableTable.length+assignment[i][1]+1;
+			 double Deperature_Time1 = h2.array1[assignment[i][0]][0];
+			 double Deperature_Time2 = h2.array2[assignment[i][1]][0];
+			 //<COMMENT> to avoid printing the elements that make up the assignment 
+			 System.out.printf("Route Number(%d,%d) = %.2f hrs\t  ", (Route_Number1), (Route_Number2), 
+			 h2.SuitableTable[assignment[i][0]][assignment[i][1]] );
+			 System.out.println(h2.SuitableBasedCity[assignment[i][0]][assignment[i][1]]);
+			 String Route_Number = Route_Number1+" --- "+Route_Number2;
+			 sum = sum + h2.SuitableTable[assignment[i][0]][assignment[i][1]]; 
+			 //</COMMENT> 
+			 BusNumber = h1.TableColBusNumber.getCellData(i);   
+			 TripNo1 = Route_Number1;
+			 DeperatureTime1 = h2.array1[assignment[i][0]][0];
+			 TripNo2 = Route_Number2;
+			 DeperatureTime2 = h2.array2[assignment[i][1]][0];
+			 ResidenceCity = h2.SuitableBasedCity[assignment[i][0]][assignment[i][1]];
+			 WaitingTime = h2.SuitableTable[assignment[i][0]][assignment[i][1]];
+			 ResultTableView.getItems().add(new MetaDadosInfo2(BusNumber,TripNo1,DeperatureTime1,TripNo2,DeperatureTime2,ResidenceCity,WaitingTime));
+			try {
+			String url = "jdbc:sqlite:/home/shadowfield/eclipse-java/Bus_Scheduling_Based_On_HungarianMethod/DBForLogin";
+			Connection conn = DriverManager.getConnection(url);
+			PreparedStatement statement = conn.prepareStatement("insert into BUS_CAR_GATE(Id,Car_Number,Car_Gate_Name,Residence_City,Route_Number,Least_Layover_Time) values(?,?,?,?,?,?); ");
+		    statement.setQueryTimeout(30);  // set timeout to 30 sec.     
+		    statement.setString(1,null);
+		    statement.setLong(2,i);
+		    statement.setString(3,"Mandalar Min");
+		    statement.setString(4,h1.SuitableBasedCity[assignment[i][0]][assignment[i][1]]);
+		    statement.setString(5,Route_Number);
+		    statement.setString(6,h1.SuitableTable[assignment[i][0]][assignment[i][1]]+" hrs");
+		    int j1 = statement.executeUpdate();
+			statement = conn.prepareStatement("insert into Trip_Schedule(Trip_No_For_City1,Residence_City1,Deperature_Time1,Trip_No_For_City2,Residence_City2,Deperature_Time2) values(?,?,?,?,?,?); ");
+		    statement.setQueryTimeout(30);  // set timeout to 30 sec.     
+		    statement.setLong(1,Route_Number1);
+		    statement.setString(2,h1.BasedCityOne);
+		    statement.setString(3,Deperature_Time1+" hrs");
+		    statement.setLong(4,Route_Number2);
+		    statement.setString(5,h1.BasedCityTwo);
+		    statement.setString(6,Deperature_Time2+" hrs");
+		    int j2 = statement.executeUpdate();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		}
+		 
+		
+		
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		ResultTableColBusNumber.setCellValueFactory(new PropertyValueFactory<MetaDadosInfo2,String>("BusNumber"));
+		ResultTableColTripNo1.setCellValueFactory(new PropertyValueFactory<MetaDadosInfo2,Integer>("TripNo1"));
+		ResultTableColBusDeperatureTime1.setCellValueFactory(new PropertyValueFactory<MetaDadosInfo2,Double>("DeperatureTime1"));
+		ResultTableColTripNo2.setCellValueFactory(new PropertyValueFactory<MetaDadosInfo2,Integer>("TripNo2"));
+		ResultTableColBusDeperatureTime2.setCellValueFactory(new PropertyValueFactory<MetaDadosInfo2,Double>("DeperatureTime2"));
+		ResultTableColResidenceCity.setCellValueFactory(new PropertyValueFactory<MetaDadosInfo2,String>("ResidenceCity"));
+		ResultTableColWaitingTime.setCellValueFactory(new PropertyValueFactory<MetaDadosInfo2,Double>("WaitingTime"));
+	}
+	public void initData(SceneManager manager) {
+		this.manager = manager;
+	}
+	
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="897.0" prefWidth="852.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Label layoutX="15.0" layoutY="34.0" prefHeight="29.0" prefWidth="602.0" text="xij = 1 if trip no i for bus i is assigned to trip no j">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="19.0" layoutY="63.0" prefHeight="21.0" prefWidth="608.0" text="xij = 0 if trip no i for bus i is not assigned to trip no j">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="129.0" prefHeight="38.0" prefWidth="822.0" text="Minimize z = 5.5x1 7 + 5.5x1 8 + 6 x1 9 + 7x1 10 + 15.5x1 11 + 14.5x1 12 + 7x2 7 + 28x2 8 + 27.5x2 9 + 5.5x2 10 + 15x2 11 + 16x2 12 " />
+      <Label layoutX="15.0" layoutY="160.0" prefHeight="38.0" prefWidth="822.0" text="+ 7.5x3 7 + 27.5x3 8 + 28x3 9 + 27x3 10 + 14.5x3 11 + 15.5x3 12 + 15x4 7 + 14 x4 8 + 13.5x4 9 + 12.5x4 10 + 27x4 11 +6x4 12" />
+      <Label layoutX="15.0" layoutY="236.0" text="ST" />
+      <Label layoutX="14.0" layoutY="281.0" prefHeight="29.0" prefWidth="296.0" text="x1 7 + x1 8 + x1 9 + x1 10 + x1 11 + x1 12 = 1" />
+      <Label layoutX="14.0" layoutY="316.0" prefHeight="29.0" prefWidth="289.0" text="x2 7 + x2 8 + x2 9 + x2 10 + x2 11 + x2 12 = 1" />
+      <Label layoutX="14.0" layoutY="355.0" prefHeight="21.0" prefWidth="296.0" text="x3 7 + x3 8 + x3 9 + x3 10 + x3 11 + x3 12 = 1" />
+      <Label layoutX="14.0" layoutY="384.0" prefHeight="21.0" prefWidth="296.0" text="x4 7 + x4 8 + x4 9 + x4 10 + x4 11 +x4 12 = 1" />
+      <Label layoutX="14.0" layoutY="419.0" prefHeight="21.0" prefWidth="296.0" text="x5 7 + x5 8 + x5 9 + x5 10 + x5 11 + x5 12 = 1 " />
+      <Label layoutX="14.0" layoutY="449.0" prefHeight="21.0" prefWidth="296.0" text="x6 7 + x6 8 + x6 9 + x6 10 + x6 11 + x6 12 = 1" />
+      <Label layoutX="15.0" layoutY="198.0" prefHeight="38.0" prefWidth="822.0" text="+ 13 x5 7 + 16x5 8 + 15.5 x5 9 + 14.5x5 10 + 27x5 11 + 28x5 12 + 12.5x6 7 + 15.5 x6 8 + 16x6 9 + 15x6 10 + 5.5x6 11 + 27.5x6 12  " />
+      <Label layoutX="22.0" layoutY="87.0" prefHeight="21.0" prefWidth="320.0" text="i = 1,2,3,4,5,6" />
+      <Label layoutX="22.0" layoutY="108.0" prefHeight="21.0" prefWidth="320.0" text="j = 7,8,9,10,11,12" />
+      <Label alignment="CENTER" layoutX="3.0" layoutY="4.0" prefHeight="21.0" prefWidth="847.0" text="Bus Scheduling System Based On Hungarian Method Model">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TableView fx:id="TableView" layoutX="348.0" layoutY="262.0" onSort="#Start" prefHeight="335.0" prefWidth="481.0">
+        <columns>
+          <TableColumn fx:id="TripNo" prefWidth="75.0" text="Trip No" />
+          <TableColumn fx:id="TripNo7" prefWidth="75.0" text="7" />
+            <TableColumn fx:id="TripNo8" prefWidth="75.0" text="8" />
+            <TableColumn fx:id="TripNo9" prefWidth="75.0" text="9" />
+            <TableColumn fx:id="TripNo10" prefWidth="75.0" text="10" />
+            <TableColumn fx:id="TripNo11" prefWidth="75.0" text="11" />
+            <TableColumn fx:id="TripNo12" prefWidth="75.0" text="12" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</AnchorPane>

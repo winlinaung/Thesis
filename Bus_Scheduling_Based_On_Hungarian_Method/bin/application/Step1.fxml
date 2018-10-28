@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Step1Controller">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="1330.0">
+         <children>
+            <TableView fx:id="TableView1" editable="true" layoutX="102.0" layoutY="71.0" prefHeight="401.0" prefWidth="381.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Label layoutX="544.0" layoutY="14.0" text="Step 1 :  For each row of the matrix, find the smallest element and subtract it from every element in its row.  Go to Step 2." />
+            <Button fx:id="BtnShowNextStep" layoutX="532.0" layoutY="380.0" mnemonicParsing="false" onAction="#ShowNextStep" prefHeight="31.0" prefWidth="214.0" text="Show Next Step" />
+            <Label layoutX="213.0" layoutY="25.0" text="Cost Matrix" />
+            <Label layoutX="967.0" layoutY="90.0" text="primed zero" />
+            <Label layoutX="961.0" layoutY="169.0" text="Column cover " />
+            <Label layoutX="971.0" layoutY="206.0" text="Row Cover" />
+            <Label layoutX="961.0" layoutY="128.0" text="Starred zero" />
+            <TextField layoutX="1096.0" layoutY="85.0" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: red;" />
+            <TextField layoutX="1096.0" layoutY="123.0" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: lightblue;" />
+            <TextField layoutX="1096.0" layoutY="164.0" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: lightgray;" />
+            <TextField layoutX="1096.0" layoutY="201.0" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: lightgray;" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

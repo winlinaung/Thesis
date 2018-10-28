@@ -1,0 +1,63 @@
+package controllers;
+
+public class MetaDadosInfo3 {
+int TripNo;
+int TripNo7;
+int TripNo8;
+int TripNo9;
+int TripNo10;
+int TripNo11;
+int TripNo12;
+public MetaDadosInfo3(int TripNo,int TripNo7,int TripNo8,int TripNo9,int TripNo10,int Trip11,int Trip12) {
+	this.TripNo = TripNo;
+	this.TripNo7 = TripNo7;
+	this.TripNo8 = TripNo8;
+	this.TripNo9 = TripNo9;
+	this.TripNo10 = TripNo10;
+	this.TripNo11 = TripNo11;
+	this.TripNo12 = TripNo12;
+}
+public int getTripNo() {
+	return TripNo;
+}
+public void setTripNo(int tripNo) {
+	TripNo = tripNo;
+}
+public int getTripNo7() {
+	return TripNo7;
+}
+public void setTripNo7(int tripNo7) {
+	TripNo7 = tripNo7;
+}
+public int getTripNo8() {
+	return TripNo8;
+}
+public void setTripNo8(int tripNo8) {
+	TripNo8 = tripNo8;
+}
+public int getTripNo9() {
+	return TripNo9;
+}
+public void setTripNo9(int tripNo9) {
+	TripNo9 = tripNo9;
+}
+public int getTripNo10() {
+	return TripNo10;
+}
+public void setTripNo10(int tripNo10) {
+	TripNo10 = tripNo10;
+}
+public int getTripNo11() {
+	return TripNo11;
+}
+public void setTripNo11(int tripNo11) {
+	TripNo11 = tripNo11;
+}
+public int getTripNo12() {
+	return TripNo12;
+}
+public void setTripNo12(int tripNo12) {
+	TripNo12 = tripNo12;
+}
+
+}

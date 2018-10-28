@@ -1,0 +1,27 @@
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Scanner;
+import java.time.LocalDate;
+public class h1 {
+public static void main(String args[]) throws ParseException {
+	double p1 = 3.75;
+	int p2 = (int) p1;
+	double p3 = p1 - p2;
+	System.out.println(p3);
+	p3 = p3 * .6;
+	System.out.println(p3);
+	p1 = p2 + p3;
+	System.out.println(p1);
+	String date = "2018-09-29";
+	DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-d");
+	LocalDate d = LocalDate.parse(date,format);
+	d.plusDays(1);
+	System.out.println(d);
+
+
+}
+}

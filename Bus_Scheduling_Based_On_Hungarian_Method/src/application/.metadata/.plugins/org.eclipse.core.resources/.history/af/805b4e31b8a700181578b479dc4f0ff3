@@ -1,0 +1,153 @@
+package controllers;
+
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextField;
+
+public class MetaDadosInfo {
+	String TextFieldBusNumber;
+	double TextFieldBusDeperatureTime1;
+	double TextFieldBusArrivalTime1;
+	double TextFieldBusDeperatureTime2;
+	double TextFieldBusArrivalTime2;
+	double TextFieldLeastLayoverTime;
+	
+	String BusNumber;
+	double BusDeperatureTime1;
+	double BusArrivalTime1; 
+	double BusDeperatureTime2; 
+	double BusArrivalTime2;
+	double LeastLayoverTime;
+	public MetaDadosInfo(String tableColCarNumber,double tableColCarDeperatureTime1,double tableColCarArrivalTime1,double tableColCarDeperatureTime2,double tableColCarArrivalTime2,double tableColLeastLayoverTime) {
+
+	this.TextFieldBusNumber = tableColCarNumber;
+	this.TextFieldBusDeperatureTime1 = tableColCarDeperatureTime1;
+	this.TextFieldBusArrivalTime1 = tableColCarArrivalTime1;
+	this.TextFieldBusDeperatureTime2 = tableColCarDeperatureTime2;
+	this.TextFieldBusArrivalTime2 = tableColCarArrivalTime2;
+	this.TextFieldLeastLayoverTime = tableColLeastLayoverTime;
+	}
+
+	
+
+	public String getTextFieldBusNumber() {
+		return TextFieldBusNumber;
+	}
+
+	public void setTextFieldBusNumber(String textFieldBusNumber) {
+		TextFieldBusNumber = textFieldBusNumber;
+	}
+
+
+	public double getTextFieldBusDeperatureTime1() {
+		return TextFieldBusDeperatureTime1;
+	}
+
+	public void setTextFieldBusDeperatureTime1(double textFieldBusDeperatureTime1) {
+		TextFieldBusDeperatureTime1 = textFieldBusDeperatureTime1;
+	}
+
+	public double getTextFieldBusArrivalTime1() {
+		return TextFieldBusArrivalTime1;
+	}
+
+	public void setTextFieldBusArrivalTime1(double textFieldBusArrivalTime1) {
+		TextFieldBusArrivalTime1 = textFieldBusArrivalTime1;
+	}
+
+	public String getTextFieldResidenceCity2() {
+		return TextFieldResidenceCity2;
+	}
+
+	public void setTextFieldResidenceCity2(String textFieldResidenceCity2) {
+		TextFieldResidenceCity2 = textFieldResidenceCity2;
+	}
+
+	public double getTextFieldBusDeperatureTime2() {
+		return TextFieldBusDeperatureTime2;
+	}
+
+	public void setTextFieldBusDeperatureTime2(double textFieldBusDeperatureTime2) {
+		TextFieldBusDeperatureTime2 = textFieldBusDeperatureTime2;
+	}
+
+	public double getTextFieldBusArrivalTime2() {
+		return TextFieldBusArrivalTime2;
+	}
+
+	public void setTextFieldBusArrivalTime2(double textFieldBusArrivalTime2) {
+		TextFieldBusArrivalTime2 = textFieldBusArrivalTime2;
+	}
+
+	public double getTextFieldLeastLayoverTime() {
+		return TextFieldLeastLayoverTime;
+	}
+
+	public void setTextFieldLeastLayoverTime(double textFieldLeastLayoverTime) {
+		TextFieldLeastLayoverTime = textFieldLeastLayoverTime;
+	}
+
+
+	public String getBusNumber() {
+		return BusNumber;
+	}
+
+	public void setBusNumber(String busNumber) {
+		BusNumber = busNumber;
+	}
+
+	
+
+	public double getBusDeperatureTime1() {
+		return BusDeperatureTime1;
+	}
+
+	public void setBusDeperatureTime1(double busDeperatureTime1) {
+		BusDeperatureTime1 = busDeperatureTime1;
+	}
+
+	public double getBusArrivalTime1() {
+		return BusArrivalTime1;
+	}
+
+	public void setBusArrivalTime1(double busArrivalTime1) {
+		BusArrivalTime1 = busArrivalTime1;
+	}
+	public double getBusDeperatureTime2() {
+		return BusDeperatureTime2;
+	}
+
+	public void setBusDeperatureTime2(double busDeperatureTime2) {
+		BusDeperatureTime2 = busDeperatureTime2;
+	}
+
+	public double getBusArrivalTime2() {
+		return BusArrivalTime2;
+	}
+
+	public void setBusArrivalTime2(double busArrivalTime2) {
+		BusArrivalTime2 = busArrivalTime2;
+	}
+
+	public double getLeastLayoverTime() {
+		return LeastLayoverTime;
+	}
+
+	public void setLeastLayoverTime(double leastLayoverTime) {
+		LeastLayoverTime = leastLayoverTime;
+	}
+
+	public static void linearTablaConductores(ObservableList<MetaDadosInfo> data) {
+		String BusNumber = null;
+		double BusDeperatureTime1 = 0.0;
+		double BusArrivalTime1 = 0.0; 
+		double BusDeperatureTime2 = 0.0; 
+		double BusArrivalTime2 = 0.0;
+		double LeastLayoverTime = 0.0;
+		data = FXCollections.observableArrayList();
+		data.add(new MetaDadosInfo(BusNumber,BusDeperatureTime1,BusArrivalTime1,BusDeperatureTime2,BusArrivalTime2,LeastLayoverTime));
+	}
+}

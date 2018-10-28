@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<StackPane prefHeight="704.0" prefWidth="1262.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ShowDataController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="1254.0" style="-fx-background-color: #dcf98b;">
+         <children>
+            <Label layoutX="62.0" layoutY="67.0" text="Residence City1" />
+            <Label layoutX="24.0" layoutY="106.0" text="Bus Deperature Time1" />
+            <Label layoutX="405.0" layoutY="28.0" text="Bus Arrival Time1" />
+            <TextField fx:id="TextFieldLeastLayoverTime" layoutX="932.0" layoutY="101.0" text="5:00" />
+            <TextField fx:id="TextFieldBusArrivalTime1" layoutX="572.0" layoutY="23.0" text="15:30" />
+            <TextField fx:id="TextFieldBusDeperatureTime1" layoutX="198.0" layoutY="101.0" text="7:30" />
+            <Button fx:id="BtnAddData" layoutX="393.0" layoutY="192.0" mnemonicParsing="false" onMouseClicked="#handleAddData" prefHeight="31.0" prefWidth="157.0" style="-fx-background-color: Brown;" text="Add Data" textFill="WHITE" />
+            <TableView fx:id="TableView" layoutX="5.0" layoutY="237.0" prefHeight="445.0" prefWidth="1246.0">
+              <columns>
+                <TableColumn fx:id="TableColBusNumber" prefWidth="151.0" text="Bus Number" />
+                  <TableColumn fx:id="TableColResidenceCity1" prefWidth="211.0" text="Residence City 1" />
+                  <TableColumn fx:id="TableColBusDeperatureTime1" prefWidth="75.0" text="Bus Deperature Time1" />
+                  <TableColumn fx:id="TableColBusArrivalTime1" prefWidth="75.0" text="Bus Arrival Time 1" />
+                  <TableColumn fx:id="TableColResidenceCity2" prefWidth="75.0" text="Residence City 2" />
+                  <TableColumn fx:id="TableColBusDeperatureTime2" prefWidth="75.0" text="Bus Deperature Time 2" />
+                  <TableColumn fx:id="TableColBusArrivalTime2" prefWidth="75.0" text="Bus Arrival Time 2" />
+                  <TableColumn fx:id="TableColLeastLayoverTime" prefWidth="75.0" text="Least Layover Time" />
+                  <TableColumn fx:id="TableColDeperatureDate" prefWidth="75.0" text="Deperature Date" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Label layoutX="774.0" layoutY="106.0" text="Least Layover Time" />
+            <TextField fx:id="TextFieldResidenceCity1" layoutX="198.0" layoutY="63.0" text="Mandalay" />
+            <Label layoutX="72.0" layoutY="28.0" text="Bus Number" />
+            <TextField fx:id="TextFieldBusNumber" layoutX="198.0" layoutY="23.0" text="8I/2345" />
+            <Label layoutX="409.0" layoutY="67.0" prefHeight="21.0" prefWidth="94.0" text="Residence City2" />
+            <Label layoutX="778.0" layoutY="28.0" text="Bus Deperature Time2" />
+            <Label layoutX="778.0" layoutY="68.0" text="Bus Arrival Time 2" />
+            <TextField fx:id="TextFieldResidenceCity2" layoutX="572.0" layoutY="62.0" text="Yangon" />
+            <TextField fx:id="TextFieldBusDeperatureTime2" layoutX="932.0" layoutY="23.0" text="18:30" />
+            <TextField fx:id="TextFieldBusArrivalTime2" layoutX="932.0" layoutY="63.0" text="2:30" />
+            <Button fx:id="BtnNextStep" layoutX="764.0" layoutY="192.0" mnemonicParsing="false" onAction="#NextModelPage" prefHeight="31.0" prefWidth="157.0" style="-fx-background-color: Brown;" text="Next Step" textFill="WHITE" />
+            <DatePicker fx:id="TextFieldDeperatureDate" layoutX="572.0" layoutY="101.0" prefHeight="31.0" prefWidth="157.0" promptText="Date" style="-fx-font-size: 13;" />
+            <Label fx:id="DeperatureDate" layoutX="400.0" layoutY="106.0" prefHeight="21.0" prefWidth="112.0" text="Deperature Date" />
+            <Label layoutX="43.0" layoutY="197.0" text="The maximum least layover day for this system is 5 days." />
+            <Button fx:id="BtnHomeView" layoutX="581.0" layoutY="192.0" mnemonicParsing="false" onAction="#HomeView" prefHeight="31.0" prefWidth="157.0" style="-fx-background-color: Brown;" text="Home" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

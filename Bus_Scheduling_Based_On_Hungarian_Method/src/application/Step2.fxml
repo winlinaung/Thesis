@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Step2Controller">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="1330.0">
+         <children>
+            <TableView fx:id="TableView1" editable="true" layoutX="63.0" layoutY="216.0" prefHeight="340.0" prefWidth="353.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Label alignment="TOP_LEFT" layoutX="306.0" layoutY="14.0" prefHeight="78.0" prefWidth="717.0" text="Step 2 : Find a zero (Z) in the resulting matrix.  If there is no starred zero in its row or column, star Z. Repeat&#10; for each element in the matrix. Go to Step 3." />
+            <Label layoutX="172.0" layoutY="174.0" text="Mask Matrix" />
+            <Button fx:id="BtnShowNextStep" layoutX="447.0" layoutY="525.0" mnemonicParsing="false" onAction="#ShowNextStep" prefHeight="31.0" prefWidth="200.0" text="Show Next Step" />
+            <TableView fx:id="TableView2" layoutX="675.0" layoutY="208.0" prefHeight="340.0" prefWidth="336.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy></TableView>
+            <Label layoutX="817.0" layoutY="174.0" text="Cost Matrix" />
+            <Label layoutX="1044.0" layoutY="89.0" text="primed zero" />
+            <Label layoutX="1036.0" layoutY="174.0" text="Column cover " />
+            <Label layoutX="1047.0" layoutY="206.0" text="Row Cover" />
+            <Label layoutX="1043.0" layoutY="128.0" text="Starred zero" />
+            <TextField layoutX="1132.0" layoutY="84.0" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: red;" />
+            <TextField layoutX="1132.0" layoutY="123.0" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: lightblue;" />
+            <TextField layoutX="1132.0" layoutY="164.0" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: lightgray;" />
+            <TextField layoutX="1132.0" layoutY="201.0" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: lightgray;" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

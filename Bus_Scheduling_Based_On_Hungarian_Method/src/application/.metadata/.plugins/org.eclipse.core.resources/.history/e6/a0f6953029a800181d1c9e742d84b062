@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="1582.0" style="-fx-background-color: #dcf98b;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ShowDataController">
+   <children>
+      <Label layoutX="14.0" layoutY="106.0" text="Residence City1" />
+      <Label layoutX="407.0" layoutY="28.0" text="Bus Deperature Time1" />
+      <Label layoutX="406.0" layoutY="67.0" text="Bus Arrival Time1" />
+      <TextField fx:id="TextFieldLeastLayoverTime" layoutX="958.0" layoutY="101.0" />
+      <TextField fx:id="TextFieldBusArrivalTime1" layoutX="594.0" layoutY="62.0" />
+      <TextField fx:id="TextFieldBusDeperatureTime1" layoutX="594.0" layoutY="23.0" />
+      <Button fx:id="BtnAddData" layoutX="471.0" layoutY="192.0" mnemonicParsing="false" onMouseClicked="#handleAddData" prefHeight="31.0" prefWidth="157.0" style="-fx-background-color: Brown;" text="Add Data" textFill="WHITE" />
+      <TableView fx:id="TableView" layoutX="35.0" layoutY="237.0" prefHeight="423.0" prefWidth="1088.0">
+        <columns>
+          <TableColumn fx:id="TableColBusNumber" prefWidth="141.0" text="Bus Number" />
+            <TableColumn fx:id="TableColBusDeperatureTime1" prefWidth="75.0" text="Bus Deperature Time 1" />
+            <TableColumn fx:id="TableColBusArrivalTime1" prefWidth="75.0" text="Bus Arrival Time 1" />
+            <TableColumn fx:id="TableColBusDeperatureTime2" prefWidth="75.0" text="Bus Deperature Time 2" />
+            <TableColumn fx:id="TableColBusArrivalTime2" prefWidth="75.0" text="Bus Arrival Time 2" />
+            <TableColumn fx:id="TableColLeastLayoverTime" prefWidth="75.0" text="LeastLayoverTime" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label layoutX="797.0" layoutY="106.0" text="Least Layover Time" />
+      <TextField fx:id="TextFieldResidenceCity1" layoutX="198.0" layoutY="101.0" />
+      <Label layoutX="14.0" layoutY="68.0" text="Bus Number" />
+      <TextField fx:id="TextFieldBusNumber" layoutX="198.0" layoutY="62.0" />
+      <Label layoutX="411.0" layoutY="106.0" text="Residence City2" />
+      <Label layoutX="801.0" layoutY="28.0" text="Bus Deperature Time2" />
+      <Label layoutX="801.0" layoutY="68.0" text="Bus Arrival Time 2" />
+      <TextField fx:id="TextFieldResidenceCity2" layoutX="595.0" layoutY="101.0" />
+      <TextField fx:id="TextFieldBusDeperatureTime2" layoutX="958.0" layoutY="23.0" />
+      <TextField fx:id="TextFieldBusArrivalTime2" layoutX="958.0" layoutY="63.0" />
+      <Button fx:id="BtnNextStep" layoutX="673.0" layoutY="192.0" mnemonicParsing="false" onAction="#NextCalculationPage" prefHeight="31.0" prefWidth="157.0" style="-fx-background-color: Brown;" text="Next Step" textFill="WHITE" />
+      <TextField fx:id="TextFieldNoOfTrip" layoutX="198.0" layoutY="23.0" />
+      <Label layoutX="13.0" layoutY="28.0" text="Number of Trips" />
+   </children>
+</AnchorPane>

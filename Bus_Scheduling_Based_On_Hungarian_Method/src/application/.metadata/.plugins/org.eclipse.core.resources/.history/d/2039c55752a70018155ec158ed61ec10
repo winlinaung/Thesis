@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="718.0" prefWidth="775.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="180.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../eclipse-java/CrewAssignment/image/yccn.jpg" />
+         </image>
+      </ImageView>
+      <MenuBar prefHeight="31.0" prefWidth="775.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ImageView fitHeight="133.0" fitWidth="165.0" layoutX="610.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../eclipse-java/CrewAssignment/image/mm.gif" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="177.0" layoutY="31.0" prefHeight="66.0" prefWidth="440.0" text="University Of Technology(Yatanarpon Cyber City)">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="190.0" layoutY="97.0" prefHeight="46.0" prefWidth="415.0" text="Bus Scheduling System Based on Hungarian Method">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="15.0" text="MenuButton">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </MenuButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,70 @@
+package controllers;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.Objects;
+import java.util.ResourceBundle;
+import java.util.Timer;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import javafx.stage.Window;
+
+public class welcomeController implements Initializable{
+	public void Exit() {
+		System.exit(0);
+	}
+	public void AlgorithmHistory() {
+		
+	}
+	@FXML
+	public void openAnotherWindow(ActionEvent actionEvent) {
+	    try {
+	        OpenWindow.openWindowMenuItem(someLabel, "/application/UserInputDeperatureAndArrivalTime", "Title", 600, 400,
+	                false);
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+	public void BusArrivalAndDeperatureTime() {
+		
+	}
+	public void DirectionofSoftware() {
+		
+	}
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+	}
+}
+	public class OpenWindow {
+		public void openWindowMenuItem(Node label, String recource, String title,
+		                                      int width, int height, boolean resizeable, String icon) throws IOException {
+		    Parent root = FXMLLoader.load(Objects.requireNonNull(OpenWindow.class.getClassLoader().getResource(recource)));
+		    Stage stage = new Stage();
+		    Scene scene = new Scene(root, width, height);
+		    if (icon != null) {
+		        stage.getIcons().add(new Image(icon));
+		    }
+		    stage.setTitle(title);
+		    stage.setResizable(resizeable);
+		    stage.setScene(scene);
+		    stage.show();
+
+		    // close current window
+		    label.getScene().getWindow().hide(); // this is key point
+		}
+	
+
+

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="563.0" prefWidth="707.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="welcomController">
+   <children>
+      <ImageView fitHeight="122.0" fitWidth="148.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../eclipse-java/CrewAssignment/image/yccn.jpg" />
+         </image>
+      </ImageView>
+      <MenuBar prefHeight="31.0" prefWidth="707.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="AlgorithmHistory" mnemonicParsing="false" onAction="#AlgorithmHistory" text="Algorithm History" />
+                  <MenuItem fx:id="Calculation" mnemonicParsing="false" onAction="#Calculation" text="Calculation" />
+                  <MenuItem fx:id="BusArrivalAndDeperatureTime" mnemonicParsing="false" onAction="#BusArrivalAndDeperatureTime" text="Bus Arrival And Deperature" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Direction of Software">
+               <items>
+                  <MenuItem fx:id="DirectionofSoftware" mnemonicParsing="false" onAction="#DirectionofSoftware" text="Direction of Software" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="Exit">
+               <items>
+                  <MenuItem fx:id="Exit" mnemonicParsing="false" onAction="#Exit" text="Exit" />
+               </items></Menu>
+        </menus>
+      </MenuBar>
+      <ImageView fitHeight="122.0" fitWidth="160.0" layoutX="545.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../eclipse-java/CrewAssignment/image/mm.gif" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="164.0" layoutY="31.0" prefHeight="66.0" prefWidth="379.0" text="University Of Technology(Yatanarpon Cyber City)">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="159.0" layoutY="97.0" prefHeight="46.0" prefWidth="379.0" text="Bus Scheduling System Based on Hungarian Method">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="203.0" fitWidth="236.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../eclipse-java/CrewAssignment/Image1/1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="164.0" fitWidth="235.0" layoutX="236.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../eclipse-java/CrewAssignment/Image1/5.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="157.0" fitWidth="262.0" layoutX="471.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../eclipse-java/CrewAssignment/Image1/6.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="157.0" fitWidth="235.0" layoutX="4.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../eclipse-java/CrewAssignment/Image1/8.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="157.0" fitWidth="235.0" layoutX="236.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../eclipse-java/CrewAssignment/Image1/8.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="157.0" fitWidth="235.0" layoutX="471.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../eclipse-java/CrewAssignment/Image1/8.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

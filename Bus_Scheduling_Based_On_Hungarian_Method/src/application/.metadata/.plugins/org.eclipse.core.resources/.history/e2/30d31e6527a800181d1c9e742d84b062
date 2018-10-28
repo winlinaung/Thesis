@@ -1,0 +1,40 @@
+package application;
+
+import controllers.ResultController;
+import controllers.ShowDataController;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+
+public class SceneManager {
+	private Scene scene;
+	ShowDataController sdController;
+	ResultController rController;
+	
+	public SceneManager(Scene scene) {
+		this.scene = scene;
+	}
+	
+	public void showInputView() {
+		try {
+			FXMLLoader loader  = new FXMLLoader(getClass().getResource("UserInputDeperatureAndArrivialTime.fxml"));
+			scene.setRoot( (Parent) loader.load() );
+			sdController = loader.<ShowDataController>getController();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void showResultView() {
+		try {
+			FXMLLoader loader  = new FXMLLoader(getClass().getResource("Result.fxml"));
+			scene.setRoot( (Parent) loader.load() );
+			sdController = loader.<ShowDataController>getController();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+}

@@ -1,0 +1,131 @@
+package controllers;
+
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextField;
+
+public class MetaDadosInfo {
+	String TextFieldBusNumber;
+	String TextFieldResidenceCity1;
+	double TextFieldBusDeperatureTime1;
+	double TextFieldBusArrivalTime1;
+	String TextFieldResidenceCity2;
+	double TextFieldBusDeperatureTime2;
+	double TextFieldBusArrivalTime2;
+	double TextFieldLeastLayoverTime;
+	String TextFieldDeperatureDate;
+	public MetaDadosInfo(String tableColCarNumber,String ResidenceCity1,double tableColCarDeperatureTime1,double tableColCarArrivalTime1,String ResidenceCity2,double tableColCarDeperatureTime2,double tableColCarArrivalTime2,double tableColLeastLayoverTime,String tableColDeperatureDate) {
+
+	this.TextFieldBusNumber = tableColCarNumber;
+	this.TextFieldResidenceCity1 = ResidenceCity1;
+	this.TextFieldBusDeperatureTime1 = tableColCarDeperatureTime1;
+	this.TextFieldBusArrivalTime1 = tableColCarArrivalTime1;
+	this.TextFieldResidenceCity2 = ResidenceCity2;
+	this.TextFieldBusDeperatureTime2 = tableColCarDeperatureTime2;
+	this.TextFieldBusArrivalTime2 = tableColCarArrivalTime2;
+	this.TextFieldLeastLayoverTime = tableColLeastLayoverTime;
+	this.TextFieldDeperatureDate = tableColDeperatureDate;
+	}
+
+	public String getTextFieldResidenceCity1() {
+		return TextFieldResidenceCity1;
+	}
+
+	public void setTextFieldResidenceCity1(String textFieldResidenceCity1) {
+		TextFieldResidenceCity1 = textFieldResidenceCity1;
+	}
+
+	public String getTextFieldResidenceCity2() {
+		return TextFieldResidenceCity2;
+	}
+
+	public void setTextFieldResidenceCity2(String textFieldResidenceCity2) {
+		TextFieldResidenceCity2 = textFieldResidenceCity2;
+	}
+
+	public String getTextFieldBusNumber() {
+		return TextFieldBusNumber;
+	}
+
+	public void setTextFieldBusNumber(String textFieldBusNumber) {
+		TextFieldBusNumber = textFieldBusNumber;
+	}
+
+
+	public double getTextFieldBusDeperatureTime1() {
+		return TextFieldBusDeperatureTime1;
+	}
+
+	public void setTextFieldBusDeperatureTime1(double textFieldBusDeperatureTime1) {
+		TextFieldBusDeperatureTime1 = textFieldBusDeperatureTime1;
+	}
+
+	public double getTextFieldBusArrivalTime1() {
+		return TextFieldBusArrivalTime1;
+	}
+
+	public void setTextFieldBusArrivalTime1(double textFieldBusArrivalTime1) {
+		TextFieldBusArrivalTime1 = textFieldBusArrivalTime1;
+	}
+
+	public double getTextFieldBusDeperatureTime2() {
+		return TextFieldBusDeperatureTime2;
+	}
+
+	public void setTextFieldBusDeperatureTime2(double textFieldBusDeperatureTime2) {
+		TextFieldBusDeperatureTime2 = textFieldBusDeperatureTime2;
+	}
+
+	public double getTextFieldBusArrivalTime2() {
+		return TextFieldBusArrivalTime2;
+	}
+
+	public void setTextFieldBusArrivalTime2(double textFieldBusArrivalTime2) {
+		TextFieldBusArrivalTime2 = textFieldBusArrivalTime2;
+	}
+
+	public double getTextFieldLeastLayoverTime() {
+		return TextFieldLeastLayoverTime;
+	}
+
+	public void setTextFieldLeastLayoverTime(double textFieldLeastLayoverTime) {
+		TextFieldLeastLayoverTime = textFieldLeastLayoverTime;
+	}
+
+
+	
+	public String getTextFieldDeperatureDate() {
+		return TextFieldDeperatureDate;
+	}
+
+	public void setTextFieldDeperatureDate(String textFieldDeperatureDate) {
+		TextFieldDeperatureDate = textFieldDeperatureDate;
+	}
+
+	public static void linearTablaConductores(ObservableList<MetaDadosInfo> data) {
+		String BusNumber = null;
+		String ResidenceCity1 = null;
+		double BusDeperatureTime1 = 0.0;
+		double BusArrivalTime1 = 0.0; 
+		String ResidenceCity2 = null;
+		double BusDeperatureTime2 = 0.0; 
+		double BusArrivalTime2 = 0.0;
+		double LeastLayoverTime = 0.0;
+		data = FXCollections.observableArrayList();
+		data.add(new MetaDadosInfo(BusNumber,ResidenceCity1,BusDeperatureTime1,BusArrivalTime1,ResidenceCity2,BusDeperatureTime2,BusArrivalTime2,LeastLayoverTime));
+	}
+
+//	@Override
+//	public String toString() {
+//		return "MetaDadosInfo [TextFieldBusNumber=" + TextFieldBusNumber + ", TextFieldBusDeperatureTime1="
+//				+ TextFieldBusDeperatureTime1 + ", TextFieldBusArrivalTime1=" + TextFieldBusArrivalTime1
+//				+ ", TextFieldBusDeperatureTime2=" + TextFieldBusDeperatureTime2 + ", TextFieldBusArrivalTime2="
+//				+ TextFieldBusArrivalTime2 + ", TextFieldLeastLayoverTime=" + TextFieldLeastLayoverTime + ", BusNumber="
+//				+ BusNumber + ", BusDeperatureTime1=" + BusDeperatureTime1 + ", BusArrivalTime1=" + BusArrivalTime1
+//				+ ", BusDeperatureTime2=" + BusDeperatureTime2 + ", BusArrivalTime2=" + BusArrivalTime2
+//				+ ", LeastLayoverTime=" + LeastLayoverTime + "]";
+//	}	
+}

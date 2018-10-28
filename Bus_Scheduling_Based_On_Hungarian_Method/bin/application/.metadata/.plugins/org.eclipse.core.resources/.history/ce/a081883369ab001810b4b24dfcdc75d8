@@ -1,0 +1,40 @@
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Scanner;
+import java.time.LocalDate;
+public class h1 {
+public static void main(String args[]) throws ParseException {
+	double p1 = 3.75;
+	int p2 = (int) p1;
+	double p3 = p1 - p2;
+	p3 = p3 * .6
+	System.out.println(p3);
+	p3 = p3 * .6;
+	System.out.println(p3);
+	p1 = p2 + p3;
+	System.out.println(p1);
+	String date = "2018-09-29";
+	DateTimeFormatter format = DateTimeFormatter.ofPattern("y-m-d");
+	LocalDate d = LocalDate.now().plusDays(5);
+	System.out.println(d);
+	String dt = "2008-09-30";  // Start date
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	Calendar c = Calendar.getInstance();
+	c.setTime(sdf.parse(dt));
+	c.add(Calendar.DATE, 0);  // number of days to add
+	dt = sdf.format(c.getTime());  // dt is now the new date
+	System.out.println(dt);
+	
+	int Int_SuitableTable = (int)5;//Convert Number to Hour format
+	 double Double_SuitableTable = 5 - Int_SuitableTable;
+	 Double_SuitableTable = Double_SuitableTable * .6;
+	 if(Double_SuitableTable == 0.6)
+		 Double_SuitableTable = 1;
+	 double SuitableTable = Double_SuitableTable + Int_SuitableTable;
+	System.out.println(SuitableTable);
+}
+}
